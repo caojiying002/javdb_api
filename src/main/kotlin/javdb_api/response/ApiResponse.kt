@@ -1,4 +1,4 @@
-package com.jiyingcao.com.jiyingcao.javdb_api.response
+package com.jiyingcao.javdb_api.response
 
 /**
  * {
