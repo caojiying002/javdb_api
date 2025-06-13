@@ -19,7 +19,7 @@ class ApiServiceTest {
     
     @Test
     @DisplayName("测试启动接口 - 基本调用")
-    fun `test startup endpoint with default parameters`() = runBlocking {
+    fun `test startup endpoint with default parameters`(): Unit = runBlocking {
         try {
             val response: ApiResponse<StartupData> = apiService.getStartup()
             
@@ -41,11 +41,11 @@ class ApiServiceTest {
                     println("日志启用状态: ${startupData.loggingEnabled}")
                     println("图片前缀: ${startupData.webImagePrefix}")
                 }
-            }/* else {
+            } else {
                 println("API返回错误: ${response.getErrorMessage()}")
                 // 根据业务需求决定是否fail测试
                 // fail("API调用失败: ${response.getErrorMessage()}")
-            }*/
+            }
             
         } catch (e: Exception) {
             println("网络请求异常: ${e.message}")
@@ -56,7 +56,7 @@ class ApiServiceTest {
     
     @Test
     @DisplayName("测试启动接口 - 自定义参数")
-    fun `test startup endpoint with custom parameters`() = runBlocking {
+    fun `test startup endpoint with custom parameters`(): Unit = runBlocking {
         try {
             val response = apiService.getStartup(
                 lastAdId = "76",
@@ -82,7 +82,7 @@ class ApiServiceTest {
     
     @Test
     @DisplayName("测试API响应数据结构")
-    fun `test startup response data structure`() = runBlocking {
+    fun `test startup response data structure`(): Unit = runBlocking {
         try {
             val response = apiService.getStartup()
             
