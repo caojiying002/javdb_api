@@ -7,6 +7,13 @@ package com.jiyingcao.javdb_api.response
  *   "message": null,
  *   "data": {}
  * }
+ *
+ * {
+ *     "success": 0,
+ *     "action": "ExpiredSignature",
+ *     "message": "簽名已過期，沒有權限訪問內容",
+ *     "data": null
+ * }
  */
 data class ApiResponse<T>(
     val success: Int,

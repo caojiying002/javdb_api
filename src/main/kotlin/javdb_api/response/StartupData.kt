@@ -1,6 +1,10 @@
 package com.jiyingcao.javdb_api.response
 
+import com.google.gson.annotations.SerializedName
+
 /**
+ * 启动接口响应数据
+ * 
  * {
  *     "splash_ad": {
  *       "enabled": true,
@@ -55,46 +59,109 @@ package com.jiyingcao.javdb_api.response
  *   }
  */
 data class StartupData(
+    @SerializedName("splash_ad")
     val splashAd: SplashAd? = null,
+    
+    @SerializedName("user")
     val user: User? = null,
+    
+    @SerializedName("backup_domains_data")
     val backupDomainsData: String? = null,
+    
+    @SerializedName("recent_keywords")
     val recentKeywords: List<String>? = null,
+    
+    @SerializedName("recent_magnet_keywords")
     val recentMagnetKeywords: List<String>? = null,
+    
+    @SerializedName("settings")
     val settings: Settings? = null,
+    
+    @SerializedName("feedback")
     val feedback: Feedback? = null,
+    
+    @SerializedName("logging_enabled")
     val loggingEnabled: Boolean? = null,
+    
+    @SerializedName("recognize_actor_enabled")
     val recognizeActorEnabled: Boolean? = null,
+    
+    @SerializedName("recognize_movie_enabled")
     val recognizeMovieEnabled: Boolean? = null,
+    
+    @SerializedName("web_image_prefix")
     val webImagePrefix: String? = null,
+    
+    @SerializedName("ypay_payment_enabled")
     val ypayPaymentEnabled: Boolean? = null
 )
+
 data class SplashAd(
+    @SerializedName("enabled")
     val enabled: Boolean? = null,
+    
+    @SerializedName("overtime")
     val overtime: Int? = null,
+    
+    @SerializedName("ad")
     val ad: Ad? = null
 )
+
 data class Ad(
+    @SerializedName("id")
     val id: Int? = null,
+    
+    @SerializedName("media_type")
     val mediaType: String? = null,
+    
+    @SerializedName("media_url")
     val mediaUrl: String? = null,
+    
+    @SerializedName("link_type")
     val linkType: String? = null,
+    
+    @SerializedName("link_url")
     val linkUrl: String? = null,
+    
+    @SerializedName("skip_way")
     val skipWay: String? = null,
+    
+    @SerializedName("sleep_time")
     val sleepTime: Int? = null,
+    
+    @SerializedName("updated_at")
     val updatedAt: String? = null,
+    
+    @SerializedName("md5")
     val md5: String? = null
 )
+
 data class User(
+    @SerializedName("promotion_code")
     val promotionCode: String? = null
 )
+
 data class Settings(
+    @SerializedName("UPDATE_DESCRIPTION")
     val updateDescription: String? = null,
+    
+    @SerializedName("NOTICE")
     val notice: String? = null,
+    
+    @SerializedName("AGENT_GROUP")
     val agentGroup: String? = null,
+    
+    @SerializedName("INSTALLATION_URL")
     val installationUrl: String? = null,
+    
+    @SerializedName("VERSION")
     val version: String? = null,
+    
+    @SerializedName("TESTFLIGHT_URL")
     val testflightUrl: String? = null
 )
+
 data class Feedback(
+    @SerializedName("placeholder")
     val placeholder: String? = null
 )
