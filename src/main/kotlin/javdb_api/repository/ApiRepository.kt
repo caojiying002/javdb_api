@@ -1,6 +1,7 @@
 package com.jiyingcao.javdb_api.repository
 
 import com.jiyingcao.javdb_api.ApiClient
+import com.jiyingcao.javdb_api.ApiService
 import com.jiyingcao.javdb_api.exception.ApiException
 import com.jiyingcao.javdb_api.response.ApiResponse
 import com.jiyingcao.javdb_api.response.StartupData
@@ -9,9 +10,9 @@ import com.jiyingcao.javdb_api.response.StartupData
  * API Repository - 遵循Repository模式
  * 为将来的Android项目提供清晰的数据层架构
  */
-class ApiRepository {
-    
-    private val apiService = ApiClient.apiService
+class ApiRepository(
+    private val apiService: ApiService = ApiClient.apiService
+) {
     
     /**
      * 获取启动配置数据
